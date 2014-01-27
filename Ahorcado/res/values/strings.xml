@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ahorcado</string>
+    <string name="action_settings">Settings</string>
+    <string name="texto_titulo">El Androide Ahorcado</string>
+    <string name="texto_subtitulo">¡Introduce una palabra y haz que alguien juegue a adivinarla!</string>
+    <string name="texto_boton_palabra">Introducir Palabra</string>
+    <string name="texto_boton_jugar">Jugar</string>
+    <string name="texto_boton_salir">Salir</string>
+    <string name="texto_auxiliar_icono">Icono ahorcado</string>
+    <string name="texto_titulo_insertar">Insertar palabra</string>
+    <string name="texto_subtitulo_insertar">Inserta la palabra que tendrá que adivinar el jugador:</string>
+    <string name="texto_pista_insertar">Palabra a adivinar</string>
+    <string name="texto_boton_insertar">Insertar</string>
+    <string name="title_activity_insercion">Insercion</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
