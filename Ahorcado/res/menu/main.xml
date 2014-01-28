@@ -1,9 +1,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item
+
+    <item
         android:id="@+id/action_salir"
         android:icon="@android:drawable/ic_menu_close_clear_cancel"
         android:onClick="salir"
         android:title="@string/texto_boton_salir">
+    </item>
+    <item
+        android:id="@+id/action_insertar"
+        android:onClick="lanzarInsertar"
+        android:title="@string/texto_titulo_insertar">
+    </item>
+    <item
+        android:id="@+id/action_jugar"
+        android:onClick="lanzarJuego"
+        android:title="@string/texto_boton_jugar">
     </item>
 
 </menu>

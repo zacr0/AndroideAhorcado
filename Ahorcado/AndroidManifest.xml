@@ -30,6 +30,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.hlc.ahorcado.MainActivity" />
         </activity>
+        <activity
+            android:name="org.hlc.ahorcado.Juego"
+            android:label="@string/title_activity_juego" >
+        </activity>
     </application>
 
 </manifest>

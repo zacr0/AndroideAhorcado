@@ -47,16 +47,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="#FFF"
-        android:text="@string/texto_boton_palabra" />
+        android:onClick="lanzarInsercion"
+        android:text="@string/texto_boton_palabra"
+        android:textColor="#FFF" />
 
     <Button
         android:id="@+id/boton_jugar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="#FFF"
-        android:text="@string/texto_boton_jugar" />
+        android:onClick="lanzarJuego"
+        android:text="@string/texto_boton_jugar"
+        android:textColor="#FFF" />
 
     <Button
         android:id="@+id/boton_salir"
