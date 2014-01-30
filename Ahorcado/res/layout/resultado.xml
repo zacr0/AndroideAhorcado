@@ -2,7 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo_pizarra"
+    android:gravity="center|center_horizontal"
     android:orientation="vertical" >
-    
+
+    <TextView
+        android:id="@+id/titulo_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/texto_titulo_resultado"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF" />
+
+    <TextView
+        android:id="@+id/palabra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="30dp" />
+
+    <Button
+        android:id="@+id/boton_nuevo_juego"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:onClick="lanzarInsercion"
+        android:text="@string/texto_boton_nuevo_juego" />
+
+    <Button
+        android:id="@+id/boton_menu"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:onClick="salir"
+        android:text="@string/texto_boton_salir" />
 
 </LinearLayout>

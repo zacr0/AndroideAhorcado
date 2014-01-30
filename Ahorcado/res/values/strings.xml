@@ -17,5 +17,12 @@
     <string name="error_falta_palabra">Introduce una palabra antes</string>
     <string name="error_formato_palabra">El formato de la palabra no es correcto</string>
     <string name="title_activity_juego">Juego</string>
-	<string name="texto_boton_volver">Volver</string>
+    <string name="texto_boton_volver">Volver</string>
+    <string name="texto_titulo_resultado">Resultado:</string>
+    <string name="texto_boton_nuevo_juego">Insertar nueva palabra</string>
+    <string name="title_activity_resultado">Resultado</string>
+    <string name="resultado_ganar">¡ACERTASTE!</string>
+    <string name="resultado_perder">¡PERDISTE!</string>
+    <string name="texto_titulo_fallos">Fallos:</string>
+
 </resources>

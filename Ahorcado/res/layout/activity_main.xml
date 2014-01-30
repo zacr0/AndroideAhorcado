@@ -61,7 +61,7 @@
         android:textColor="#FFF" />
 
     <Button
-        android:id="@+id/boton_salir"
+        android:id="@+id/boton_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
