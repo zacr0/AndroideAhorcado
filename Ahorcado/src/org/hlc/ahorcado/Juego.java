@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -41,8 +42,8 @@ public class Juego extends Activity {
 	 * fallos: contador de fallos que ha tenido el usuario. LIMITE_FALLOS:
 	 * máximo de fallos permitidos
 	 */
-	//private List<char[]> letrasPalabra = Arrays.asList(MainActivity.palabra
-			//.toCharArray());
+	// private List<char[]> letrasPalabra = Arrays.asList(MainActivity.palabra
+	// .toCharArray());
 	private char[] letrasPalabra = MainActivity.palabra.toCharArray();
 	private char[] caracteresSolucion = new char[letrasPalabra.length];
 	private int fallos = 0;
@@ -73,6 +74,10 @@ public class Juego extends Activity {
 		for (int i = 0; i < caracteresSolucion.length; i++) {
 			caracteresSolucion[i] = '_';
 		}
+		
+		Log.d("Juego", "La palabra es " + MainActivity.palabra);
+		Log.d("Juego", "El contenido de la solución es " + Arrays.toString(caracteresSolucion));
+		Log.d("Juego", "El contenido de la palabra es " + Arrays.toString(letrasPalabra));
 
 		actualizarSolucion();
 
@@ -86,6 +91,9 @@ public class Juego extends Activity {
 		char letra = boton.getText().toString().charAt(0);
 		// Desactivamos el boton:
 		boton.setEnabled(false);
+		
+		Log.d("Juego", "Contiene? " + Arrays.asList(letrasPalabra).contains(letra));
+		
 		/*
 		 * Si la palabra contiene la letra, modificamos el array solucion, si
 		 * no, se aumenta el contador de fallos. En ambos casos, comprobamos
@@ -93,21 +101,21 @@ public class Juego extends Activity {
 		 * perdido, o si debe continuar adivinando.
 		 */
 		if (Arrays.asList(letrasPalabra).contains(letra)) {
-			for (int i = 0; i < letrasPalabra.length - 1; i++) {
+			Log.d("Juego", "Ha entrado en el contains con " + letra);
+			for (int i = 0; i < letrasPalabra.length; i++) {
+				Log.d("Juego", "Ha entrado en el for");
 				if (Arrays.asList(letrasPalabra).get(i).equals(letra)) {
+					Log.d("Juego", "Ha entrado en el if del for");
 					caracteresSolucion[i] = letra;
 				}
 			}
-
 			actualizarSolucion();
 			comprobarResultado();
-
 		} else {
+			Log.d("Juego", "Ha entrado en el else, ha fallado con " + letra);
 			fallos++;
-
 			actualizarContador();
 			actualizarSolucion();
-
 			comprobarResultado();
 		}
 	}
@@ -129,7 +137,7 @@ public class Juego extends Activity {
 			fallos = 0;
 			finish();
 			startActivity(intent);
-		//} else if (letrasPalabra.equals(caracteresSolucion)) {
+			// } else if (letrasPalabra.equals(caracteresSolucion)) {
 		} else if (Arrays.equals(letrasPalabra, caracteresSolucion)) {
 			haGanado = true;
 
