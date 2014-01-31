@@ -1,12 +1,11 @@
 package org.hlc.ahorcado;
 
 import java.util.Arrays;
-import java.util.List;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -42,9 +41,10 @@ public class Juego extends Activity {
 	 * fallos: contador de fallos que ha tenido el usuario. LIMITE_FALLOS:
 	 * máximo de fallos permitidos
 	 */
-	private List<char[]> letrasPalabra = Arrays.asList(MainActivity.palabra
-			.toCharArray());
-	private char[] caracteresSolucion = new char[letrasPalabra.size()];
+	//private List<char[]> letrasPalabra = Arrays.asList(MainActivity.palabra
+			//.toCharArray());
+	private char[] letrasPalabra = MainActivity.palabra.toCharArray();
+	private char[] caracteresSolucion = new char[letrasPalabra.length];
 	private int fallos = 0;
 	private static final int LIMITE_FALLOS = 6;
 
@@ -70,7 +70,7 @@ public class Juego extends Activity {
 		}
 
 		// Inicializacion del array solucion:
-		for (int i = 0; i < caracteresSolucion.length - 1; i++) {
+		for (int i = 0; i < caracteresSolucion.length; i++) {
 			caracteresSolucion[i] = '_';
 		}
 
@@ -92,9 +92,9 @@ public class Juego extends Activity {
 		 * despues si el estado de ambos array, para determinar si ha ganado, ha
 		 * perdido, o si debe continuar adivinando.
 		 */
-		if (letrasPalabra.contains(letra)) {
-			for (int i = 0; i < letrasPalabra.size() - 1; i++) {
-				if (letrasPalabra.get(i).equals(letra)) {
+		if (Arrays.asList(letrasPalabra).contains(letra)) {
+			for (int i = 0; i < letrasPalabra.length - 1; i++) {
+				if (Arrays.asList(letrasPalabra).get(i).equals(letra)) {
 					caracteresSolucion[i] = letra;
 				}
 			}
@@ -117,7 +117,7 @@ public class Juego extends Activity {
 	}
 
 	public void actualizarSolucion() {
-		tvSolucion.setText("" + caracteresSolucion.toString());
+		tvSolucion.setText(Arrays.toString(caracteresSolucion));
 	}
 
 	public void comprobarResultado() {
@@ -126,13 +126,16 @@ public class Juego extends Activity {
 		if (fallos >= LIMITE_FALLOS) {
 			Intent intent = new Intent(this, Resultado.class);
 			intent.putExtra("resultado", haGanado);
+			fallos = 0;
 			finish();
 			startActivity(intent);
-		} else if (letrasPalabra.equals(caracteresSolucion)) {
+		//} else if (letrasPalabra.equals(caracteresSolucion)) {
+		} else if (Arrays.equals(letrasPalabra, caracteresSolucion)) {
 			haGanado = true;
 
 			Intent intent = new Intent(this, Resultado.class);
 			intent.putExtra("resultado", haGanado);
+			fallos = 0;
 			finish();
 			startActivity(intent);
 		}
