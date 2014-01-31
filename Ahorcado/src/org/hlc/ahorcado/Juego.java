@@ -8,6 +8,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -102,11 +103,43 @@ public class Juego extends Activity {
 		// Si no ha encontrado coincidencias, aumentamos los fallos:
 		if (!haEncontrado) {
 			fallos++;
+			dibujarFallo();
 			actualizarContador();
 			actualizarSolucion();
 			comprobarResultado();
 		}
 
+	}
+
+	public void dibujarFallo() {
+		ImageView imagen;
+
+		switch (fallos) {
+		case 1:
+			imagen = (ImageView) findViewById(R.id.imageView1);
+			imagen.setVisibility(View.VISIBLE);
+			break;
+		case 2:
+			imagen = (ImageView) findViewById(R.id.imageView2);
+			imagen.setVisibility(View.VISIBLE);
+			break;
+		case 3:
+			imagen = (ImageView) findViewById(R.id.imageView3);
+			imagen.setVisibility(View.VISIBLE);
+			break;
+		case 4:
+			imagen = (ImageView) findViewById(R.id.imageView4);
+			imagen.setVisibility(View.VISIBLE);
+			break;
+		case 5:
+			imagen = (ImageView) findViewById(R.id.imageView5);
+			imagen.setVisibility(View.VISIBLE);
+			break;
+		case 6:
+			imagen = (ImageView) findViewById(R.id.imageView6);
+			imagen.setVisibility(View.VISIBLE);
+			break;
+		}
 	}
 
 	public void actualizarContador() {
@@ -128,7 +161,6 @@ public class Juego extends Activity {
 			startActivity(intent);
 		} else if (Arrays.equals(letrasPalabra, caracteresSolucion)) {
 			haGanado = true;
-
 			Intent intent = new Intent(this, Resultado.class);
 			intent.putExtra("resultado", haGanado);
 			fallos = 0;
