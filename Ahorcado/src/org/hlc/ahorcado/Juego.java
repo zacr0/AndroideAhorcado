@@ -1,9 +1,12 @@
 package org.hlc.ahorcado;
 
+import java.util.Arrays;
+import java.util.List;
+
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -27,7 +30,23 @@ import android.widget.TextView;
  * 
  */
 public class Juego extends Activity {
+	// Vistas:
 	private LinearLayout layout;
+	private TextView tvContador, tvSolucion;
+
+	// Variables de juego:
+	/*
+	 * letrasPalabra: un array compuesto por las letras que componen la palabra
+	 * solución. caracteresSolucion: conforme el usuario vaya acertando letras,
+	 * insertaremos estas en la misma posicion que ocupan en letrasPalabra.
+	 * fallos: contador de fallos que ha tenido el usuario. LIMITE_FALLOS:
+	 * máximo de fallos permitidos
+	 */
+	private List<char[]> letrasPalabra = Arrays.asList(MainActivity.palabra
+			.toCharArray());
+	private char[] caracteresSolucion = new char[letrasPalabra.size()];
+	private int fallos = 0;
+	private static final int LIMITE_FALLOS = 6;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +54,9 @@ public class Juego extends Activity {
 		setContentView(R.layout.juego);
 
 		// Obtencion de las vistas:
-		layout = (LinearLayout) findViewById(R.id.LinearLayout);
+		layout = (LinearLayout) findViewById(R.id.LinearLayout3);
+		tvContador = (TextView) findViewById(R.id.contador);
+		tvSolucion = (TextView) findViewById(R.id.solucion);
 
 		// Modificacion de la fuente:
 		Typeface tf = Typeface.createFromAsset(getAssets(), "tiza.ttf");
@@ -47,13 +68,67 @@ public class Juego extends Activity {
 				((TextView) vista).setTypeface(tf, Typeface.BOLD);
 			}
 		}
+
+		// Inicializacion del array solucion:
+		for (int i = 0; i < caracteresSolucion.length - 1; i++) {
+			caracteresSolucion[i] = '_';
+		}
+		actualizarSolucion();
+
+		// Contador a 0:
+		actualizarContador();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.juego, menu);
-		return true;
+	public void comprobarSolucion(View view) {
+		// Obtenemos la letra que corresponde al boton:
+		Button boton = (Button) view;
+		char letra = boton.getText().toString().charAt(0);
+
+		/*
+		 * Si la palabra contiene la letra, modificamos el array solucion, si
+		 * no, se aumenta el contador de fallos. En ambos casos, comprobamos
+		 * despues si el estado de ambos array, para determinar si ha ganado, ha
+		 * perdido, o si debe continuar adivinando.
+		 */
+		if (letrasPalabra.contains(letra)) {
+			for (int i = 0; i < letrasPalabra.size() - 1; i++) {
+				if (letrasPalabra.get(i).equals(letra)) {
+					caracteresSolucion[i] = letra;
+				}
+			}
+			actualizarSolucion();
+			comprobarResultado();
+		} else {
+			fallos++;
+			actualizarContador();
+			actualizarSolucion();
+			comprobarResultado();
+		}
+	}
+
+	public void actualizarContador() {
+		tvContador.setText(fallos);
+	}
+
+	public void actualizarSolucion() {
+		tvSolucion.setText(caracteresSolucion.toString());
+	}
+
+	public void comprobarResultado() {
+		boolean haGanado = false;
+
+		if (fallos >= LIMITE_FALLOS) {
+			Intent intent = new Intent(this, Resultado.class);
+			intent.putExtra("resultado", haGanado);
+			startActivity(intent);
+		} else if (letrasPalabra.equals(caracteresSolucion)) {
+			haGanado = true;
+
+			Intent intent = new Intent(this, Resultado.class);
+			intent.putExtra("resultado", haGanado);
+			startActivity(intent);
+		}
+
 	}
 
 }

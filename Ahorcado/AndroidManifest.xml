@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="org.hlc.ahorcado.MainActivity"
+            android:name="MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,22 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="org.hlc.ahorcado.Insercion"
-            android:label="@string/title_activity_insercion"
-            android:parentActivityName="org.hlc.ahorcado.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="org.hlc.ahorcado.MainActivity" />
+        <activity android:name="Insercion" android:label="Insercion">
         </activity>
-        <activity
-            android:name="org.hlc.ahorcado.Juego"
-            android:label="@string/title_activity_juego"
-            android:screenOrientation="landscape" >
+        <activity android:name="Juego" android:label="Juego">
         </activity>
-        <activity
-            android:name="org.hlc.ahorcado.Resultado"
-            android:label="@string/title_activity_resultado" >
+        <activity android:name="Resultado" android:label="Resultado">
         </activity>
     </application>
 

@@ -68,12 +68,12 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
-	private void lanzarInsercion(View view) {
+	public void lanzarInsercion(View view) {
 		Intent intent = new Intent(this, Insercion.class);
 		startActivity(intent);
 	}
 
-	private void lanzarJuego(View view) {
+	public void lanzarJuego(View view) {
 		if (palabra != null) {
 			Intent intent = new Intent(this, Juego.class);
 			startActivity(intent);
