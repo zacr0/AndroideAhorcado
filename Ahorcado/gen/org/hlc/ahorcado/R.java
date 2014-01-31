@@ -93,27 +93,28 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
-        public static final int error_falta_palabra=0x7f05000d;
-        public static final int error_formato_palabra=0x7f05000e;
-        public static final int resultado_ganar=0x7f050014;
-        public static final int resultado_perder=0x7f050015;
-        public static final int texto_auxiliar_icono=0x7f050007;
-        public static final int texto_boton_insertar=0x7f05000b;
+        public static final int error_falta_palabra=0x7f05000e;
+        public static final int error_formato_palabra=0x7f05000f;
+        public static final int resultado_ganar=0x7f050015;
+        public static final int resultado_perder=0x7f050016;
+        public static final int texto_auxiliar_icono=0x7f050008;
+        public static final int texto_boton_insertar=0x7f05000c;
         public static final int texto_boton_jugar=0x7f050005;
-        public static final int texto_boton_nuevo_juego=0x7f050012;
+        public static final int texto_boton_menu=0x7f050007;
+        public static final int texto_boton_nuevo_juego=0x7f050013;
         public static final int texto_boton_palabra=0x7f050004;
         public static final int texto_boton_salir=0x7f050006;
-        public static final int texto_boton_volver=0x7f050010;
-        public static final int texto_pista_insertar=0x7f05000a;
+        public static final int texto_boton_volver=0x7f050011;
+        public static final int texto_pista_insertar=0x7f05000b;
         public static final int texto_subtitulo=0x7f050003;
-        public static final int texto_subtitulo_insertar=0x7f050009;
+        public static final int texto_subtitulo_insertar=0x7f05000a;
         public static final int texto_titulo=0x7f050002;
-        public static final int texto_titulo_fallos=0x7f050016;
-        public static final int texto_titulo_insertar=0x7f050008;
-        public static final int texto_titulo_resultado=0x7f050011;
-        public static final int title_activity_insercion=0x7f05000c;
-        public static final int title_activity_juego=0x7f05000f;
-        public static final int title_activity_resultado=0x7f050013;
+        public static final int texto_titulo_fallos=0x7f050017;
+        public static final int texto_titulo_insertar=0x7f050009;
+        public static final int texto_titulo_resultado=0x7f050012;
+        public static final int title_activity_insercion=0x7f05000d;
+        public static final int title_activity_juego=0x7f050010;
+        public static final int title_activity_resultado=0x7f050014;
     }
     public static final class style {
         /** 

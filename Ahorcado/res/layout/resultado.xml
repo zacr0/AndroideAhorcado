@@ -33,7 +33,7 @@
         android:id="@+id/boton_menu"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:onClick="salir"
+        android:onClick="lanzarMenu"
         android:text="@string/texto_boton_salir" />
 
 </LinearLayout>

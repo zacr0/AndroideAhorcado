@@ -43,6 +43,6 @@
         android:layout_height="wrap_content"
         android:onClick="insertarYSalir"
         android:text="@string/texto_boton_insertar"
-        android:textColor="#FFF" />
+        android:textColor="#000" />
 
 </LinearLayout>

@@ -8,6 +8,7 @@
     <string name="texto_boton_palabra">Introducir Palabra</string>
     <string name="texto_boton_jugar">Jugar</string>
     <string name="texto_boton_salir">Salir</string>
+    <string name="texto_boton_menu">Ir al Menú</string>
     <string name="texto_auxiliar_icono">Icono ahorcado</string>
     <string name="texto_titulo_insertar">Insertar palabra</string>
     <string name="texto_subtitulo_insertar">Inserta la palabra que tendrá que adivinar el jugador:</string>

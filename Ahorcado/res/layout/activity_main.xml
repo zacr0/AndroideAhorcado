@@ -49,7 +49,7 @@
         android:layout_weight="1"
         android:onClick="lanzarInsercion"
         android:text="@string/texto_boton_palabra"
-        android:textColor="#FFF" />
+        android:textColor="#000" />
 
     <Button
         android:id="@+id/boton_jugar"
@@ -58,7 +58,7 @@
         android:layout_weight="1"
         android:onClick="lanzarJuego"
         android:text="@string/texto_boton_jugar"
-        android:textColor="#FFF" />
+        android:textColor="#000" />
 
     <Button
         android:id="@+id/boton_menu"
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:onClick="salir"
-        android:textColor="#FFF"
+        android:textColor="#000"
         android:text="@string/texto_boton_salir" />
 
 </LinearLayout>

@@ -73,6 +73,7 @@ public class Juego extends Activity {
 		for (int i = 0; i < caracteresSolucion.length - 1; i++) {
 			caracteresSolucion[i] = '_';
 		}
+
 		actualizarSolucion();
 
 		// Contador a 0:
@@ -83,7 +84,8 @@ public class Juego extends Activity {
 		// Obtenemos la letra que corresponde al boton:
 		Button boton = (Button) view;
 		char letra = boton.getText().toString().charAt(0);
-
+		// Desactivamos el boton:
+		boton.setEnabled(false);
 		/*
 		 * Si la palabra contiene la letra, modificamos el array solucion, si
 		 * no, se aumenta el contador de fallos. En ambos casos, comprobamos
@@ -96,22 +98,26 @@ public class Juego extends Activity {
 					caracteresSolucion[i] = letra;
 				}
 			}
+
 			actualizarSolucion();
 			comprobarResultado();
+
 		} else {
 			fallos++;
+
 			actualizarContador();
 			actualizarSolucion();
+
 			comprobarResultado();
 		}
 	}
 
 	public void actualizarContador() {
-		tvContador.setText(fallos);
+		tvContador.setText("" + fallos);
 	}
 
 	public void actualizarSolucion() {
-		tvSolucion.setText(caracteresSolucion.toString());
+		tvSolucion.setText("" + caracteresSolucion.toString());
 	}
 
 	public void comprobarResultado() {
@@ -120,12 +126,14 @@ public class Juego extends Activity {
 		if (fallos >= LIMITE_FALLOS) {
 			Intent intent = new Intent(this, Resultado.class);
 			intent.putExtra("resultado", haGanado);
+			finish();
 			startActivity(intent);
 		} else if (letrasPalabra.equals(caracteresSolucion)) {
 			haGanado = true;
 
 			Intent intent = new Intent(this, Resultado.class);
 			intent.putExtra("resultado", haGanado);
+			finish();
 			startActivity(intent);
 		}
 
