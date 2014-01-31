@@ -62,12 +62,7 @@ public class Resultado extends Activity {
 			}
 		}
 	}
-	
-	public void lanzarInsercion(View view) {
-		Intent intent = new Intent(this, Insercion.class);
-		startActivity(intent);
-	}
-	
+
 	public void lanzarMenu(View view) {
 		Intent intent = new Intent(this, MainActivity.class);
 		startActivity(intent);

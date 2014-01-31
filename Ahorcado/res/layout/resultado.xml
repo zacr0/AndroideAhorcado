@@ -23,13 +23,6 @@
         android:textSize="30dp" />
 
     <Button
-        android:id="@+id/boton_nuevo_juego"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:onClick="lanzarInsercion"
-        android:text="@string/texto_boton_nuevo_juego" />
-
-    <Button
         android:id="@+id/boton_menu"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
