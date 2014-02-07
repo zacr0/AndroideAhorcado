@@ -112,32 +112,27 @@ public class Juego extends Activity {
 	}
 
 	public void dibujarFallo() {
-		ImageView imagen;
-
+		ImageView imagen = (ImageView) findViewById(R.id.imageView1);
+		
 		switch (fallos) {
 		case 1:
-			imagen = (ImageView) findViewById(R.id.imageView1);
+			imagen.setImageResource(R.drawable.icono1);
 			imagen.setVisibility(View.VISIBLE);
 			break;
 		case 2:
-			imagen = (ImageView) findViewById(R.id.imageView2);
-			imagen.setVisibility(View.VISIBLE);
+			imagen.setImageResource(R.drawable.icono2);
 			break;
 		case 3:
-			imagen = (ImageView) findViewById(R.id.imageView3);
-			imagen.setVisibility(View.VISIBLE);
+			imagen.setImageResource(R.drawable.icono3);
 			break;
 		case 4:
-			imagen = (ImageView) findViewById(R.id.imageView4);
-			imagen.setVisibility(View.VISIBLE);
+			imagen.setImageResource(R.drawable.icono4);
 			break;
 		case 5:
-			imagen = (ImageView) findViewById(R.id.imageView5);
-			imagen.setVisibility(View.VISIBLE);
+			imagen.setImageResource(R.drawable.icono5);
 			break;
 		case 6:
-			imagen = (ImageView) findViewById(R.id.imageView6);
-			imagen.setVisibility(View.VISIBLE);
+			imagen.setImageResource(R.drawable.icono6);
 			break;
 		}
 	}

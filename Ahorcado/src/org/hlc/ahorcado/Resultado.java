@@ -64,8 +64,7 @@ public class Resultado extends Activity {
 	}
 
 	public void lanzarMenu(View view) {
-		Intent intent = new Intent(this, MainActivity.class);
-		startActivity(intent);
+		finish();
 	}
 
 }
